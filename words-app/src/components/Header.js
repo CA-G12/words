@@ -1,16 +1,21 @@
-import {useState} from "react"
-import getWordData from "../utils/getWordData"
-const Header =()=> {
-const[search,setSearch]=useState("")
-const handelChange=(e)=>{
-    setSearch(e.target.value)
-    
-}
-return(
+
+import { useState } from "react"
+const Header = ({search,setSearch}) => {
+const[input,setInput]=useState("")
+
+  const handelChange = (e) => {
+
+ setInput(e.target.value)
+  }
+  const handelClick=(e)=>{
+ setSearch(input)
+  }
+  
+  return (
     <div>
-<input type="text" onChange={handelChange}/>
-<button onClick={()=>getWordData(search)}>search</button>
-</div>
-)
+      <input type="text"  value={input} onChange={handelChange} />
+      <button onClick={handelClick }>search</button>
+    </div>
+  )
 }
 export default Header

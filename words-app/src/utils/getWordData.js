@@ -1,7 +1,17 @@
+const checkResponse = response => {
+    if (response.status !== 200) {
+      console.log(`Error with the request! ${response.status}`);
+      return;
+    }
+    return response.json();
+  };
 const getWordData = (word) => {
-    fetch(`https://api.dictionaryapi.dev/api/v2/entries/en/${word}`)
-    .then(response => response.json())
-    .then(data => console.log(data))
+ 
+   return  fetch(`https://api.dictionaryapi.dev/api/v2/entries/en/${word}`)
+    .then(checkResponse)
+ 
+    .catch(error=>{throw new Error("error in  getting word data" )})
+  
   }
 
 export default getWordData;
