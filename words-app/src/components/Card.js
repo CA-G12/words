@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react'
 import getWordData from '../utils/getWordData'
+
 const Card = ({ search }) => {
   const [subject, setSubject] = useState(null)
   useEffect(() => {
@@ -27,7 +28,7 @@ const Card = ({ search }) => {
             </div>
           )
         })}
-        <button onClick={() => aud.play()}>Audio</button>‏
+        <button onClick={() => aud.play()}>Audio</button>
       </div>
     )
   }
