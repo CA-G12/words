@@ -14,6 +14,7 @@ This site enables you to search a word to know it is defenitions.
 ## Technologies
 - React Js
 - Git & Github
+- Heroku
 
 ## Used API
 [Free Dictionary API](https://dictionaryapi.dev/)
