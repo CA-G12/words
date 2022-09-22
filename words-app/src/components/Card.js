@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import { useEffect} from 'react'
 import getWordData from '../utils/getWordData'
 import Bookmark from './Bookmark'
 
@@ -8,7 +8,7 @@ const Card = ({ search, data, setData }) => {
 
   useEffect(() => {
     if (search !== null) getWordData(search).then((data) => setData(data))
-  }, [search])
+  }, [search, data, setData])
   if (data !== null) {
     if(data.message) {
       const {title, message} = data;
