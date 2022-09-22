@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react"
+import {  useState } from "react"
 
  const   Bookmark=({data,setData})=> {
     const[wordList,setWordList]=useState([])
@@ -10,6 +10,7 @@ import { useEffect, useState } from "react"
    }
 
 
+  
    
  return    <div>
           <button onClick={ addBookMark}>bookmark</button>   
