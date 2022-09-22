@@ -1,13 +1,14 @@
 import { useEffect, useState } from 'react'
 import getWordData from '../utils/getWordData'
+ 7-bookmark
+const Card = ({ search, data, setData }) => {
+  //   const [subject, setSubject] = useState(null)
 
-const Card = ({ search }) => {
-  const [subject, setSubject] = useState(null)
   useEffect(() => {
-    if (search !== null) getWordData(search).then((data) => setSubject(data))
+    if (search !== null) getWordData(search).then((data) => setData(data))
   }, [search])
-  if (subject !== null) {
-    const response = subject[0]
+  if (data !== null) {
+    const response = data[0]
     const { word, meanings, phonetics } = response
     const aud = new Audio(phonetics[0].audio)
 
