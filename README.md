@@ -3,7 +3,7 @@ This is a words app, a simple dictionary.
 This site enables you to search a word to know it is defenitions.
 
 ## live page
-- Click [here](https://library-gsg.herokuapp.com/) to get into the live page.
+- Click [here]() to get into the live page.
  
 ## Installation
    - In Your terminal write `https://github.com/CA-G12/words.git`
