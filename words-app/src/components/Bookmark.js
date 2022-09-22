@@ -10,9 +10,6 @@ import { useEffect, useState } from "react"
    }
 
 
-   useEffect(() => {
-    
-   },);
    
  return    <div>
           <button onClick={ addBookMark}>bookmark</button>   
