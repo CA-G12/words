@@ -1,14 +1,30 @@
-import { useState } from "react"
+import { useEffect, useState } from "react"
 
  const   Bookmark=({data,setData})=> {
-const[test,setTest]=useState({})
-   const addBookMark=()=>{
-    setTest({'word ':data[0]})
+    const[wordList,setWordList]=useState([])
+    const[bool,setBool] = useState(true)
+
+
+   const addBookMark=()=>{ 
+    setWordList([...wordList, data[0].word])
    }
-  console.log(test)
-//  setData(oldmark=>({...oldmark,word:def}))
+
+
+   useEffect(() => {
+    
+   },);
    
- return <button onClick={ addBookMark}>bookmark</button>
+ return    <div>
+          <button onClick={ addBookMark}>bookmark</button>   
+          
+
+
+          <button onClick={() => setBool(!bool)}>{bool ? 'show' : 'hide'}</button>  
+          {bool === false ? <ul> {wordList.map((ele) => <li> {ele}</li>)}</ul> : ''} 
+
+
+        </div> 
+
  
  }
 export default Bookmark;
