@@ -1,5 +1,7 @@
 import { useEffect, useState } from 'react'
 import getWordData from '../utils/getWordData'
+import Bookmark from './Bookmark'
+
 
 const Card = ({ search, data, setData }) => {
   //   const [subject, setSubject] = useState(null)
@@ -8,9 +10,23 @@ const Card = ({ search, data, setData }) => {
     if (search !== null) getWordData(search).then((data) => setData(data))
   }, [search])
   if (data !== null) {
-    const response = data[0]
-    const { word, meanings, phonetics } = response
-    const aud = new Audio(phonetics[0].audio)
+    if(data.message) {
+      const {title, message} = data;
+
+      return (
+        <div>
+          <h3>{title}</h3>
+          <p>{message}</p>
+        </div>
+      )
+
+    }
+    else{
+      const response = data[0]
+      const { word, meanings, phonetics } = response
+      const aud = new Audio(phonetics[0].audio)
+
+
 
     return (
       <div>
@@ -30,8 +46,14 @@ const Card = ({ search, data, setData }) => {
           )
         })}
         <button onClick={() => aud.play()}>Audio</button>
+        <Bookmark  data={data} setData={setData}/>
       </div>
     )
+
+
+    }
+
+
   }
 }
 
