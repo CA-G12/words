@@ -1,7 +1,9 @@
 import { useEffect, useState } from 'react'
 import getWordData from '../utils/getWordData'
+ 7-bookmark
 const Card = ({ search, data, setData }) => {
   //   const [subject, setSubject] = useState(null)
+
   useEffect(() => {
     if (search !== null) getWordData(search).then((data) => setData(data))
   }, [search])
